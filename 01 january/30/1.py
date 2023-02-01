@@ -8,11 +8,14 @@ def data_compression(data: str) -> str:
         j = i
         while j < len(data) - 1:
             if data[j] == data[j + 1]:
-                count = count + 1
-                j = j + 1
+                count += 1
+                j += 1
             else:
                 break
         result += str(count) + char
         i = j + 1
 
     return result
+
+
+print(data_compression("AAABBBDDDC"))

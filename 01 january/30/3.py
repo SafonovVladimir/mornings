@@ -10,7 +10,7 @@ def snail(matrix: list) -> list:
 
         for item in matrix[0]:
             result_list.append(item)
-        matrix.pop(0)
+        del matrix[0]
 
         if not matrix:
             break
@@ -23,9 +23,9 @@ def snail(matrix: list) -> list:
             result_list.append(matrix[-1][k])
         matrix.pop()
 
-        for l in reversed(matrix):
-            result_list.append((l[0]))
-            l.pop(0)
+        for m in reversed(matrix):
+            result_list.append(m[0])
+            del m[0]
 
     return result_list
 
