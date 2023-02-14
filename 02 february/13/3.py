@@ -2,7 +2,13 @@ from functools import reduce
 
 
 def chained(functions: list):
-    return lambda args: reduce(lambda result, f: f(result), functions, args)
+    def apply(param):
+        result = param
+        for f in functions:
+            result = f(result)
+        return result
+    return apply
+    # return lambda args: reduce(lambda result, f: f(result), functions, args)
 
 
 def f1(x): return x * 2
