@@ -38,11 +38,9 @@ def xo_3d(moves):
     current_player = players[0]
     for i, move in enumerate(moves):
         x, y, z = move
-        # if board[x][y][z] != ' ':
-        #     return "Invalid move. Cell is already occupied."
         board[x][y][z] = current_player
         if check_win(board, current_player):
-            return f"{current_player} wins after {i + 1} moves."
+            return f"{current_player} wins after {i + 1} moves"
         current_player = players[(players.index(current_player) + 1) % 2]
     return "No winner"
 
