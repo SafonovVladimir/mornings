@@ -20,3 +20,4 @@ def roman_to_int(roman: str) -> int:
 # print(roman_to_int("III"))# == 3
 # print(roman_to_int("LVIII"))# == 58
 print(roman_to_int("MCMXCIV"))# == 1994
+print(roman_to_int("LIIV"))# == 1994
