@@ -19,7 +19,7 @@ def consonant_value(string: str) -> int:
             sum_ord_symbols += ord(s) - 96
 
         if max_num < sum_ord_symbols:
-            max_num = sum_ord_symbols
+            max_num = sum_ord_symbols 
 
     return max_num
 
