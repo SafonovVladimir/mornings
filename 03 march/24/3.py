@@ -1,9 +1,5 @@
-from itertools import chain
-
-
 def dots_and_boxes(moves: tuple[int]) -> tuple[int]:
     nodes = 1 + max(sum(moves, ()))
-    # nodes = 1 + max(chain.from_iterable(moves))
     player, y = 0, int(nodes ** 0.5)
     pts, grid = [0, 0], [4] * nodes
     for a, b in moves:
