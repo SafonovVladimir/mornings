@@ -3,7 +3,14 @@ class MinStack:
         self.stack = []
 
     def push(self, value: int) -> None:
-        return self.stack.append(value)
+        if not self.stack:
+            self.min_item = value
+
+        if value < self.min_item:
+            self.min_item = value
+
+        self.stack.append(value)
+        return self.stack
 
     def pop(self) -> None:
         if self.stack:
@@ -16,15 +23,18 @@ class MinStack:
 
     def get_min(self) -> int:
         if self.stack:
-            return min(self.stack)
+            # return min(set(self.stack))
+            return self.min_item
 
 
 new_stack = MinStack()
-    # ["MinStack", "push", "push", "push", "getMin", "pop", "top", "get_min"])
-print(new_stack.stack)
+# ["MinStack", "push", "push", "push", "getMin", "pop", "top", "get_min"])
+# print(new_stack.stack)
 print(new_stack.push(-2))
-print(new_stack.pop())
-print(new_stack.top())
+print(new_stack.push(5))
+print(new_stack.push(7))
+# print(new_stack.pop())
+# print(new_stack.top())
 print(new_stack.get_min())
 
 # Вихід
