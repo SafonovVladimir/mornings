@@ -1,15 +1,18 @@
-def max_redigit(num: int) -> int:
-    if num <= 0:
-        return None
+def pendulum(lst: list) -> list:
+    result = []
+    sort_lst = sorted(lst)
+    for i in range(len(sort_lst)):
+        if i % 2:
+            result.append(sort_lst[i])
+        else:
+            result.insert(0, sort_lst[i])
 
-    result = ""
+    return result
 
-    for i in sorted(str(num), reverse=True):
-        result += i
-
-    return int(result)
-
-print(max_redigit(99)) # повертає None
-# print(max_redigit(1000)) # повертає 321
-# print(max_redigit(418)) # повертає 841
-# print(max_redigit(999)) # повертає 999
+print(pendulum([6, 6, 8, 5, 10]))  # повертає [10, 6, 5, 6, 8]
+# Оскільки 5 є найменшим елементом списку,
+# він потрапляє у центральну позицію списку.
+# Більший, ніж найменший елемент дорівнює 6 і йде праворуч від 5.
+# Наступний більший елемент йде ліворуч від мінімального числа тощо.
+# Пам'ятай, дублікати враховуються при розміщенні, не видаляй їх.
+print(pendulum([-9, -2, -10, -6]))  # повертає [-6, -10, -9, -2]
