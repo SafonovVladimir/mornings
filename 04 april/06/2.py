@@ -1,7 +1,7 @@
 def get_reversed_color(hex_color: str) -> str:
     hex_chars = "0123456789ABCDEF"
 
-    if len(hex_color) > 6:
+    if len(hex_color) > 6 or not isinstance(hex_color, str):
         raise ValueError
 
     for char in hex_color:
