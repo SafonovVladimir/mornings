@@ -7,4 +7,4 @@ def maximum_product(num_list: list) -> int:
 
 
 print(maximum_product([1, 2, 3]))# == 6
-print(maximum_product([-5, 0, 3, 5, 2]))# == 15
+print(maximum_product([-5, 0, 3, 5, 2]))# == 21
