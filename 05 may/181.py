@@ -1,12 +1,28 @@
-def accum(string: str) -> str:
-    return "-".join([v.upper() + v * i for i, v in enumerate(string.lower())])
-
-
-print(accum("aSdIy"))
-
-# def maskify(card_number: str) -> str:
-#     return f"{'#' * len(card_number[:-4])}{card_number[-4:]}"
+# def solution(S):
+#     result = []
+#     last_occurrences = {}
 #
-# print(maskify("64607935616"))
+#     for i in range(len(S) - 1):
+#         digram = S[i:i+2]
+#
+#         if digram not in last_occurrences:
+#             last_occurrences[digram] = [i]
+#
+#         else:
+#             last_occurrences[digram].append(i)
+#
+#     for k, v in last_occurrences.items():
+#         result.append(max(v) - min(v))
+#
+#     return max(result) if max(result) != 0 else -1
+#
+#
+#
+# # s = "aakmaakmakda"
+# s = "aaa"
+# # s = "codility"
+# print(solution(s))
 
-# // maskify("64607935616") -> "#######5616"
+lst = [1, 2, 3] * -1
+lst *= 2
+print(lst)
