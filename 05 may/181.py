@@ -23,6 +23,21 @@
 # # s = "codility"
 # print(solution(s))
 
-lst = [1, 2, 3] * -1
-lst *= 2
-print(lst)
+# lst = [1, 2, 3] * -1
+# lst *= 2
+# print(lst)
+from collections import Counter
+
+paragraph = ["The quick brown fox",
+             "jumps over the lazy dog.",
+             "The dog barks,",
+             "and the fox runs away."
+             ]
+
+
+def word_frequency(paragraph: list) -> dict:
+    return dict(Counter(word.lower() for row in paragraph for word in row.replace(".", "").replace(",", "").split()))
+
+
+frequency = word_frequency(paragraph)
+print(frequency)
