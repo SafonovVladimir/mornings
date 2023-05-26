@@ -36,7 +36,8 @@ paragraph = ["The quick brown fox",
 
 
 def word_frequency(paragraph: list) -> dict:
-    return dict(Counter(word.lower() for row in paragraph for word in row.replace(".", "").replace(",", "").split()))
+    return (dict(Counter(word.lower() for line in paragraph
+                         for word in line.strip(".,").split())))
 
 
 frequency = word_frequency(paragraph)
